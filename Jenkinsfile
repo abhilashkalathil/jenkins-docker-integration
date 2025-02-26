@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/abhilashkalathil/jenkins-docker-integration.git'
+                    sh 'rm -rf *'  // Clean the workspace
+                    sh 'git clone -b main https://github.com/abhilashkalathil/jenkins-docker-integration.git'
+                    sh 'ls -la'  // Check if files are present
             }
         }
         stage('Build Docker Image') {
