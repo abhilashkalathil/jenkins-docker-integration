@@ -24,7 +24,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 sh 'docker ps'
-                sh 'docker run -d -p 8080:80 --name my-running-app my-jenkins-app'
+                sh 'docker run -d -p 8081:80 --name my-running-app my-jenkins-app'
             }
         }
     }
