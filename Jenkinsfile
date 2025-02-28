@@ -10,8 +10,14 @@ pipeline {
             }
         }
         stage('Build Docker Image') {
-            steps {
-                sh 'docker buildx build -t my-jenkins-app .'
+            steps steps {
+ 
+                dir('jenkins-docker-integration') {  // Change to the cloned directory
+
+                    sh 'docker buildx build -t my-jenkins-app .'
+
+                }
+ 
             }
         }
         stage('Run Docker Container') {
