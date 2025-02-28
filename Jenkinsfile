@@ -12,7 +12,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh 'docker ps'
-                sh 'docker buildx -t my-jenkins-app .'
+                sh 'docker buildx my-jenkins-app .'
             }
         }
         stage('Run Docker Container') {
